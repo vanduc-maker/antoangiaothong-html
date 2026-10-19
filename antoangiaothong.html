@@ -1,0 +1,684 @@
+ 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Toàn Giao Thông 🚦</title>
+
+<style>
+:root {
+    --blue: #0878d1;
+    --dark: #07305b;
+    --light: #eaf6ff;
+    --yellow: #ffcf33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #24354a;
+    background: #f4f9ff;
+    line-height: 1.7;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffffed;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 3px 18px #00376b15;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #23415f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    padding: 85px 7%;
+    color: white;
+    background:
+        linear-gradient(90deg, #04284beF, #06365bcc, #04284b55),
+        url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: appear 1s ease;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: #26374a;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 18px;
+    color: #e4f3ff;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    padding: 13px 23px;
+    border-radius: 9px;
+    background: var(--yellow);
+    color: #19334c;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px #0003;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1100px;
+    margin: -40px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.stat {
+    background: white;
+    padding: 24px 15px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px #164a7514;
+    border-bottom: 4px solid var(--yellow);
+}
+
+.stat span {
+    font-size: 32px;
+}
+
+.stat h3 {
+    color: var(--blue);
+    font-size: 18px;
+}
+
+.stat p {
+    font-size: 13px;
+    color: #62758a;
+}
+
+section.content-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 85px 22px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-heading .eyebrow {
+    color: var(--blue);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    font-size: clamp(27px, 4vw, 39px);
+    color: var(--dark);
+    margin: 8px 0;
+}
+
+.section-heading p {
+    color: #65768a;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 8px 28px #153d6110;
+    transition: .35s;
+    border: 1px solid #e3edf7;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px #0c5ba522;
+}
+
+.card-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    background: #dcecff;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    color: var(--dark);
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #596c80;
+}
+
+.card ul {
+    padding-left: 20px;
+    color: #596c80;
+}
+
+.card li {
+    margin: 8px 0;
+}
+
+.soft {
+    background: #eaf5ff;
+}
+
+.steps .card {
+    padding: 25px;
+    border-top: 4px solid var(--blue);
+}
+
+.video-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 12px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 12px 35px #0b42751a;
+}
+
+.video-box iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 12px;
+}
+
+.video-note {
+    text-align: center;
+    margin-top: 16px;
+    color: #65768a;
+}
+
+.quote {
+    padding: 65px 22px;
+    text-align: center;
+    background: linear-gradient(135deg, #075ca6, #07305b);
+    color: white;
+}
+
+.quote .symbol {
+    font-size: 48px;
+}
+
+.quote h2 {
+    font-size: clamp(28px, 5vw, 44px);
+    color: var(--yellow);
+    margin: 15px 0;
+}
+
+.quote p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+footer {
+    background: #041e38;
+    color: #d9e9f8;
+    padding: 38px 22px;
+    text-align: center;
+}
+
+footer a {
+    color: #ffdb59;
+}
+
+.back-top {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 50;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: var(--yellow);
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px #0002;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 65px 7%;
+    }
+}
+
+@media (max-width: 540px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section.content-section {
+        padding: 60px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">🚦 AN TOÀN GIAO THÔNG</div>
+
+        <nav>
+            <a href="#home">Trang Chủ</a>
+            <a href="#knowledge">Kiến Thức</a>
+            <a href="#causes">Nguyên Nhân</a>
+            <a href="#solutions">Biện Pháp</a>
+            <a href="#message">Thông Điệp</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge">🚦 CÙNG NHAU HÀNH ĐỘNG</span>
+
+            <h1>An Toàn<br>Giao Thông!</h1>
+
+            <p>
+                An toàn giao thông là hạnh phúc của mọi nhà.
+                Hãy chấp hành luật giao thông để bảo vệ bản thân
+                và cộng đồng!
+            </p>
+
+            <a class="btn" href="#knowledge">
+                Khám phá ngay ↓
+            </a>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat">
+            <span>🪖</span>
+            <h3>Đội mũ bảo hiểm</h3>
+            <p>Bảo vệ bản thân mỗi chuyến đi</p>
+        </div>
+
+        <div class="stat">
+            <span>🚦</span>
+            <h3>Đúng luật giao thông</h3>
+            <p>Tôn trọng tín hiệu và biển báo</p>
+        </div>
+
+        <div class="stat">
+            <span>💙</span>
+            <h3>Vì cộng đồng</h3>
+            <p>Văn minh và trách nhiệm</p>
+        </div>
+    </div>
+
+    <section class="content-section" id="knowledge">
+        <div class="section-heading">
+            <span class="eyebrow">KIẾN THỨC CƠ BẢN</span>
+            <h2>Những Kiến Thức Cần Biết</h2>
+            <p>Những thói quen nhỏ tạo nên hành trình an toàn.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card reveal">
+                <img class="card-image"
+                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
+                alt="Mô tô và trang bị bảo hộ" loading="lazy">
+
+                <div class="card-body">
+                    <div class="icon">🪖</div>
+                    <h3>Đội mũ bảo hiểm</h3>
+                    <ul>
+                        <li>Đội mũ đạt chuẩn khi đi xe máy, xe máy điện.</li>
+                        <li>Cài quai mũ đúng cách.</li>
+                        <li>Không sử dụng mũ nứt, vỡ hoặc hư hỏng.</li>
+                        <li>Nhắc nhở người thân cùng thực hiện.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <img class="card-image"
+                src="https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=800&q=80"
+                alt="Đường phố và phương tiện" loading="lazy">
+
+                <div class="card-body">
+                    <div class="icon">🚦</div>
+                    <h3>Chấp hành luật giao thông</h3>
+                    <ul>
+                        <li>Dừng khi đèn đỏ.</li>
+                        <li>Đi đúng làn đường quy định.</li>
+                        <li>Tuân thủ biển báo và hiệu lệnh.</li>
+                        <li>Không phóng nhanh, vượt ẩu.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <div class="card-body">
+                    <div class="icon">🚶</div>
+                    <h3>An toàn cho người đi bộ</h3>
+                    <ul>
+                        <li>Đi trên vỉa hè khi có vỉa hè.</li>
+                        <li>Sang đường tại nơi phù hợp.</li>
+                        <li>Quan sát kỹ trước khi sang đường.</li>
+                        <li>Chú ý các phương tiện đang tới.</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="content-section soft" id="causes">
+        <div class="section-heading">
+            <span class="eyebrow">NHẬN BIẾT NGUY CƠ</span>
+            <h2>Nguyên Nhân Và Hậu Quả</h2>
+            <p>Nhận biết nguy cơ để chủ động phòng tránh.</p>
+        </div>
+
+        <div class="grid">
+            <article class="card reveal">
+                <div class="card-body">
+                    <div class="icon">🚫</div>
+                    <h3>Vi phạm luật giao thông</h3>
+                    <p>
+                        Vượt đèn đỏ, chạy quá tốc độ, đi sai làn
+                        và không đội mũ bảo hiểm làm tăng nguy cơ
+                        xảy ra tai nạn.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <div class="card-body">
+                    <div class="icon">🩹</div>
+                    <h3>Tai nạn giao thông</h3>
+                    <p>
+                        Tai nạn có thể gây thương tích, thiệt hại
+                        tài sản, tổn thất tính mạng và ảnh hưởng
+                        đến hạnh phúc gia đình.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card reveal">
+                <div class="card-body">
+                    <div class="icon">🚗</div>
+                    <h3>Ùn tắc giao thông</h3>
+                    <p>
+                        Đi lại thiếu trật tự có thể gây ùn tắc,
+                        lãng phí thời gian và tăng nguy cơ
+                        va chạm trên đường.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="content-section" id="solutions">
+        <div class="section-heading">
+            <span class="eyebrow">HÀNH ĐỘNG NGAY HÔM NAY</span>
+            <h2>Biện Pháp Đảm Bảo An Toàn</h2>
+            <p>Bắt đầu từ chính hành động của mỗi người.</p>
+        </div>
+
+        <div class="grid steps">
+            <article class="card reveal">
+                <div class="icon">🎒</div>
+                <h3>Đối với học sinh</h3>
+                <ul>
+                    <li>Đội mũ bảo hiểm đúng cách.</li>
+                    <li>Không đi xe dàn hàng ngang.</li>
+                    <li>Không sử dụng điện thoại khi lái xe.</li>
+                    <li>Quan sát kỹ trước khi sang đường.</li>
+                    <li>Không điều khiển phương tiện khi chưa đủ điều kiện theo quy định.</li>
+                </ul>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">👨‍👩‍👧</div>
+                <h3>Đối với mọi người</h3>
+                <ul>
+                    <li>Không lái xe sau khi uống rượu, bia.</li>
+                    <li>Giữ khoảng cách an toàn.</li>
+                    <li>Nhường đường cho người đi bộ.</li>
+                    <li>Kiểm tra phương tiện trước chuyến đi.</li>
+                    <li>Tuân thủ quy định về tốc độ.</li>
+                </ul>
+            </article>
+
+            <article class="card reveal">
+                <div class="icon">🤝</div>
+                <h3>Chung tay hành động</h3>
+                <ul>
+                    <li>Tuyên truyền kiến thức giao thông.</li>
+                    <li>Tôn trọng biển báo và đèn tín hiệu.</li>
+                    <li>Cư xử văn minh trên đường.</li>
+                    <li>Nhắc nhở nhau thực hiện đúng luật.</li>
+                    <li>Góp phần xây dựng cộng đồng an toàn.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section class="content-section soft" id="video">
+        <div class="section-heading">
+            <span class="eyebrow">HỌC TỪ THỰC TẾ</span>
+            <h2>Video An Toàn Giao Thông</h2>
+            <p>Cùng nâng cao ý thức tham gia giao thông!</p>
+        </div>
+
+        <div class="video-box">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/xGZJmbhelo0"
+                title="Video giáo dục an toàn giao thông"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="video-note">
+            Nếu video không phát được, hãy kiểm tra kết nối
+            Internet hoặc mở video trực tiếp trên YouTube.
+        </p>
+    </section>
+
+    <section class="quote" id="message">
+        <div class="symbol">💙🚦</div>
+        <h2>“Nhanh một phút, chậm cả đời.”</h2>
+        <p>
+            Hãy tham gia giao thông an toàn, có trách nhiệm
+            để bảo vệ chính mình và mọi người!
+        </p>
+        <br>
+        <a href="#home" class="btn">⌂ Quay lại trang chủ</a>
+    </section>
+</main>
+
+<footer>
+    <h3>🚦 AN TOÀN GIAO THÔNG</h3>
+    <p>An toàn là bạn, tai nạn là điều cần phòng tránh.</p>
+    <p>
+        Tra cứu văn bản pháp luật:
+        <a href="https://thuvienphapluat.vn/"
+           target="_blank" rel="noopener noreferrer">
+            THƯ VIỆN PHÁP LUẬT ↗
+        </a>
+    </p>
+    <p>© 2026 | Trang giáo dục an toàn giao thông</p>
+</footer>
+
+<button class="back-top" onclick="goTop()"
+        aria-label="Quay lên đầu trang">↑</button>
+
+<script>
+// Hiệu ứng xuất hiện khi cuộn trang
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+});
+
+// Nút quay lại đầu trang
+function goTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+<a href="https://thuvienphapluat.vn/"
+   target="_blank"
+   rel="noopener noreferrer">
+   🔎 THƯ VIỆN PHÁP LUẬT ↗
+</a>
+</body>
+</html>
